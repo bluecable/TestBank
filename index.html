@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+	<head>
+		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="node_modules/pouchdb/dist/pouchdb.min.js"></script>
+		<script src="ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="js/dbDriver.js"></script>
+		<script type="text/javascript" src="js/testBank.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/test-bank.css">
+	</head>
+	<body>
+		<div id="question-div" ng-app="testBank" ng-controller="QuestionController">
+			<div id="question-list-pane" class="split-pane-component">
+			<div>
+				<div class="question-item" question-item  ng-repeat="question in questions" ng-click="displayQuestion(question)">
+					[{{$index + 1}}] {{question.shortString}}
+				</div>
+			</div>
+			</div>
+			<div class="split-pane-component" id="question-pane-divider"></div>
+			<div id="question-editor-pane" class="split-pane-component" >
+				<textarea id="editor" text-editor ng-model="selectedQuestion.doc.problem" obj="selectedQuestion"></textarea>
+				<div id="answers-div">
+					<label for="choice1">Choice 1:</label>
+					<input type="text" id="choice1" class="choice"ng-model="selectedQuestion.doc.choice[0]"/>
+					<label for="choice2">Choice 2:</label>
+					<input type="text" id="choice2" class="choice"ng-model="selectedQuestion.doc.choice[1]"/>
+					<label for="choice3">Choice 3:</label>
+					<input type="text" id="choice3" class="choice"ng-model="selectedQuestion.doc.choice[2]"/>
+					<label for="choice4">Choice 4:</label>
+					<input type="text" id="choice4" class="choice"ng-model="selectedQuestion.doc.choice[3]"/>
+				</div>
+				<button ng-click="saveQuestion()">Save</button>
+			</div>
+		</div>
+
+	</body>
+</html>

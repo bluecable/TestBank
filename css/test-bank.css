@@ -1,0 +1,51 @@
+html, body {
+	height : 98%;
+	min-height: 95%;
+	margin: 0;
+	padding: 0;
+}
+
+#question-div {
+	height: 100%;
+	width: 100%;
+	background-color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+}
+#question-list-pane {
+	height: 100%;
+	width : 30%;
+	margin-right: 5px;
+	border: solid;
+	
+}
+
+#question-pane-divider {
+	/*height: 100%;*/
+	width: 10px;
+}
+
+#question-editor-pane {
+	height: 100%;
+	width: 60%;
+	border: solid;
+	margin: 0;
+	padding: 0;
+}
+
+#question-editor {
+	overflow: hidden;
+}
+
+div.split-pane-component{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.question-item:hover {
+	background-color: yellow;
+}
+
+.choice {
+	display: block;
+}
